@@ -1,1 +1,23 @@
+# Node.js
+node_modules/
+dist/
+ 
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Docker
+docker-compose.override.yml
 .env
+
+# TypeScript
+*.tsbuildinfo
+
+# System plików
+.DS_Store
+Thumbs.db
+
+# Wyjścia produkcyjne
+/build
+/tmp
