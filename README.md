@@ -45,11 +45,11 @@ To set up and run this service locally, follow these steps:
 
 Send a POST request to ==/calculate-loan== wuth the required parameters:
 
-- ==totalInstallments==
-- ==remainingInstallments==
-- ==installmentAmount==
-- ==fundingValue==
-- ==interestRate==
+- `totalInstallments`
+- `remainingInstallments`
+- `installmentAmount`
+- `fundingValue`
+- `interestRate`
 
 Example
 
