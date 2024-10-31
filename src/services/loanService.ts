@@ -4,11 +4,10 @@ import { LoanData } from '../types/loanTypes';
 import { XMLParser } from 'fast-xml-parser';
 import { sendNotification } from './emailService';
 
-const REFERENCE_RATE_URL =
-  'https://static.nbp.pl/dane/stopy/stopy_procentowe.xml';
-
 const calculateLoan = async (data: LoanData) => {
-  const response = await axios.get(REFERENCE_RATE_URL);
+  const response = await axios.get(
+    'https://static.nbp.pl/dane/stopy/stopy_procentowe.xml'
+  );
   const referenceRate = parseReferenceRate(response.data);
 
   if (data.interest_rate > referenceRate) {

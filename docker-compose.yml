@@ -13,6 +13,9 @@ services:
       - '5432:5432'
 
   api:
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     build: .
     environment:
       PORT: 3000

@@ -33,6 +33,19 @@ To set up and run this service locally, follow these steps:
    ```
 
 3. **Set up Environtment Variables:**
+   Set up the following environment variables in a `.env.local` file:
+
+   ```bash
+   PORT=3000
+   DB_USER=myuser
+   DB_PASSWORD=mypassword
+   DB_HOST=db
+   DB_PORT=5432
+   DB_DATABASE=mydatabase
+
+   APP_PASSWORD='rfao kqro isgm zale'
+   USER='kuba.nowacki77@gmail.com'
+   ```
 
 4. **Run with Docker:**
    ```bash
