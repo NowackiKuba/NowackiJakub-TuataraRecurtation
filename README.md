@@ -30,13 +30,50 @@ To set up and run this service locally, follow these steps:
    ```
 2. **Install dependencies:**
 
-```bash
-    npm install
-```
+   ```bash
+   npm install
+   ```
 
 3. **Set up Environtment Variables:**
-4. **Run with Docker:**
 
-```bash
-    docker-compose up --build
+4. **Run with Docker:**
+   ```bash
+   docker-compose up --build
+   ```
+
+## Usage
+
+Send a POST request to ==/calculate-loan== wuth the required parameters:
+-==totalInstallments==
+-==remainingInstallments==
+-==installmentAmount==
+-==fundingValue==
+-==interestRate==
+
+Example
+
 ```
+{
+  "totalInstallments": 60,
+  "remainingInstallments": 45,
+  "installmentAmount": 2000,
+  "fundingValue": 120000,
+  "interestRate": 0.03
+}
+```
+
+## Technologies
+
+- **Node.js** with **Typescript** for service logic
+- **Express** for API handling
+- **PostgreSQL** as the database
+- **Docker** for containerization
+- **Nodemailer** for mail services
+
+## Project Structe
+
+- src/
+  - controllers/ - Defines API routes and handlers
+  - services/ - Core logic for calculations and rate checks
+  - models/ - DB instance
+  - types/ - Defines types used across projects
