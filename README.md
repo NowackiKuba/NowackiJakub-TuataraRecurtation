@@ -47,7 +47,13 @@ To set up and run this service locally, follow these steps:
    USER='kuba.nowacki77@gmail.com'
    ```
 
-4. **Run with Docker:**
+4. **Complie TypeScript:**
+
+   ```bash
+   npx tsc
+   ```
+
+5. **Run with Docker:**
    ```bash
    docker-compose up --build
    ```
