@@ -9,8 +9,6 @@ This project is a TypeScript-based Node.js service that calculates loan installm
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -78,3 +76,4 @@ Example
   - services/ - Core logic for calculations and rate checks
   - models/ - DB instance
   - types/ - Defines types used across projects
+- db/ - Database initialization and SQL scripts
