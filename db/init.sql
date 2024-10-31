@@ -7,5 +7,6 @@ CREATE TABLE IF NOT EXISTS loan_calculations (
     interest_rate DECIMAL,
     reference_rate DECIMAL,
     remaining_value DECIMAL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    new_installment_amount DECIMAL
 );
