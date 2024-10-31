@@ -2,6 +2,7 @@ import axios from 'axios';
 import db from '../models/db';
 import { LoanData } from '../types/loanTypes';
 import { XMLParser } from 'fast-xml-parser';
+import { sendNotification } from './emailService';
 
 const REFERENCE_RATE_URL =
   'https://static.nbp.pl/dane/stopy/stopy_procentowe.xml';
@@ -21,9 +22,9 @@ const calculateLoan = async (data: LoanData) => {
 
   const remainingInstallments = data.remaining_installments;
   const newInstallmentAmount = calculateInstallmentAmount(
-    data.financing_amount,
+    remainingValue,
     remainingInstallments,
-    referenceRate
+    data.interest_rate
   );
 
   await db.query(
@@ -41,8 +42,11 @@ const calculateLoan = async (data: LoanData) => {
   );
 
   if (newInstallmentAmount <= 0) {
-    // Załóż task w procesie lub wyślij email
-    // sendEmailNotification(); // Funkcja do wysyłania powiadomienia
+    sendNotification({
+      message: 'New installment amount is less than or equal to 0',
+      subject: 'Loan calculation failed',
+      to: 'kuba.nowacki77@gmail.com',
+    });
   }
 
   return { remainingValue, referenceRate, newInstallmentAmount };
